@@ -37,7 +37,7 @@ function App() {
       <header className="App-header">
         <div className='menu_title' onClick={ClickTitle}>Nite's Profile</div>
       </header>
-      <div className='sideBtn' id='sideBtn'>
+      <div className='sideBtn' id='sideBtn' style={{visibility:'hidden'}}>
         btn
       </div>
       <ParticlesBackground id='tsparticles'/>
