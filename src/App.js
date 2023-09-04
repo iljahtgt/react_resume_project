@@ -26,7 +26,7 @@ const ClickTitle = () => {
   }, onComplete:function(){
     particleELE.style.visibility = isClick ? 'visible' : 'hidden';
     if(isClick) {
-      confirmArea.style.visibility = 'visible';
+      // confirmArea.style.visibility = 'visible';
       sideBtnELE.classList.remove('fold');
       sideBtnELE.style.visibility = 'hidden';
       appELE.style.backgroundColor = 'transparent';

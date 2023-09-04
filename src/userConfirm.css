@@ -9,8 +9,8 @@
     height: 20%;
     justify-content: center;
     min-height: 40vh;
-    padding: 10px;
-    background-color: rgba(25,25,25,0.5);
+    padding: 20px;
+    background-color: rgba(10, 54, 136, 0.5);
   }
   
   .inputTitle {
@@ -18,7 +18,6 @@
     font-size: 26%;
     text-shadow:       
     0 0 7px #fff,
-    0 0 10px #fff,
     0 0 21px #fff,
     0 0 42px #5271ff;
   }
@@ -32,5 +31,7 @@
   
   input {
     width:50%;
+    border-radius:10px;
+    margin-top: 10%;
   }
   
