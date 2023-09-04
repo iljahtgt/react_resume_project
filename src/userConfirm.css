@@ -1,0 +1,36 @@
+
+.confirmArea {
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    box-shadow:   
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff;
+    height: 20%;
+    justify-content: center;
+    min-height: 40vh;
+    padding: 10px;
+    background-color: rgba(25,25,25,0.5);
+  }
+  
+  .inputTitle {
+    color: #ececec;
+    font-size: 26%;
+    text-shadow:       
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #5271ff;
+  }
+  
+  .inputButton {
+    background-color: #1c1468;
+    color: #ececec;
+    border-radius: 10px;
+    font-size: 20%;
+  }
+  
+  input {
+    width:50%;
+  }
+  
