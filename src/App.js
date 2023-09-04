@@ -2,46 +2,46 @@
 import './App.css';
 import ParticlesBackground from './component/particlebackground';
 import { gsap } from 'gsap';
+import SideBar from './SideBar';
 let isClick = false;
-// function ClickTitle() {
-//   gsap.to(".menu_title",{duration: 2,x: isClick ? 0 : -620, y:isClick? 0 : -420, onUpdate:function(){
-//     // document.getElementsByClassName('menu_title')[0].style.fontSize = '50px';
-//     gsap.to(".menu_title",{duration: 2,scaleX : isClick ? 1 : 0.5,scaleY : isClick ? 1 : 0.5,});
-//   }});
-//   isClick = !isClick;
-//   console.log('is clikc?',isClick)
-// }
+
 const ClickTitle = () => {
-  gsap.to(".App-header",{duration: 1,x: isClick ? 0 : -790, y:isClick? 0 : -420, onUpdate:function(){
-    // document.getElementsByClassName('menu_title')[0].style.fontSize = '50px';
-    gsap.to(".menu_title",{duration: 1,scaleX : isClick ? 1 : 0.5,scaleY : isClick ? 1 : 0.5,});
-  },onComplete:function(){
-    document.getElementById('tsparticles').style.visibility = isClick ? 'visible' : 'hidden';
-    document.getElementById('sideBtn').style.visibility = isClick ? 'hidden' : 'visible';
-    
+  let particleELE = document.getElementById('tsparticles');
+  let appELE = document.getElementById('App');
+  let sideBtnELE = document.getElementById('sideBtn');
+  gsap.to(".App-header",{duration: 1,xPercent: isClick ? 0 : -44, yPercent:isClick? 0 : -47, onUpdate:function(){
+    gsap.to(".menu_title",{duration: 0.7,scaleX : isClick ? 1 : 0.4,scaleY : isClick ? 1 : 0.4,});
+    if(isClick) {
+      sideBtnELE.style.visibility = 'hidden';
+      sideBtnELE.classList.remove('fold');
+    }
+  }, onComplete:function(){
+    particleELE.style.visibility = isClick ? 'visible' : 'hidden';
+    if(isClick) {
+      sideBtnELE.classList.remove('fold');
+      sideBtnELE.style.visibility = 'hidden';
+      appELE.style.backgroundColor = 'transparent';
+    } else {
+      sideBtnELE.classList.add('fold');
+      sideBtnELE.style.visibility = 'visible';
+      appELE.style.backgroundColor = 'rgba(0,0,0,1)'
+    }
     isClick = !isClick;
   }
-  // gsap.to(".menu_title",{duration: 1,x: isClick ? 0 : this.screenX, y:isClick? 0 : -420, onUpdate:function(){
-  //   // document.getElementsByClassName('menu_title')[0].style.fontSize = '50px';
-  //   gsap.to(".menu_title",{duration: 1,scaleX : isClick ? 1 : 0.5,scaleY : isClick ? 1 : 0.5,});
-  // },onComplete:function(){
-  //   isClick = !isClick;
-  // }
 });
   
 };
 function App() {
   return (
-    <div className="App">
+    <div className="App" id='App'>
 
       <header className="App-header">
         <div className='menu_title' onClick={ClickTitle}>Nite's Profile</div>
       </header>
       <div className='sideBtn' id='sideBtn' style={{visibility:'hidden'}}>
-        btn
+        <SideBar />
       </div>
       <ParticlesBackground id='tsparticles'/>
-      
     </div>
   );
 }
